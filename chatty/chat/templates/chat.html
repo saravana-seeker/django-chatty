@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  
+<div class="container py-5">
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="formGroupExampleInput">Create A Room</label>
+          <input type="text" class="form-control" name="room_name" id="room_name" placeholder="Example 'Python'">
+        </div>
+        <button type="submit" class="btn btn-primary" value="Enter Room">Enter The Room</button>
+      </form>
+      
+    </div>
+
+    <div class="container py-5">
+      <h2 style="color: rgb(17, 219, 17);">Chat with Available Rooms</h2>
+
+      {% for room in rooms  %}      
+      <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <div class="form-group">
+          <input type="hidden" class="form-control" name="room_name" id="room_name"  value="{{ room }}">
+        </div>
+        <div class="container py-5">
+          <p>available Rooms <a href="javascript:$('form').submit()">{{ room }}</a></p>
+      </div>
+      </form>
+    </div>
+      {% endfor %}
+      {% endblock content %}

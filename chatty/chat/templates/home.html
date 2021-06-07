@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+saravana
+{% endblock title %}
+
+
+{% block content %}
+<h1>Home</h1>
+
+{% for message in messages %}
+
+<div class="alert alert-success">
+    <a class="close" href="#" data-dismiss="alert">×</a>
+
+    {{ message }}
+
+</div>
+{% endfor %}
+
+
+<div class="jumbotron">
+    <h1 class="display-3">wellcome..!</h1><h3> Hi..! {{ user.username }} ,</h3>
+    <p class="lead">Its intent to create for learn about django authentication and authorization management.
+        You can  Chat with Available Rooms and You can create Your Own room and chat with your Groups .</p>
+    <hr class="my-2">
+    <p></p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'chat' %}" role="button">Chatty</a>
+    </p>
+  </div>
+{% endblock content %}
+    
+    
