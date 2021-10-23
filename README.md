@@ -18,7 +18,7 @@ name the file .env in chatty folder
 SECRET_KEY='SECRET_KEY'
 
 ```
-### Instal the requirements 
+### Install the requirements 
 ```
 pip3 install -r req.txt
 ```
